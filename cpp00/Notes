@@ -1,0 +1,136 @@
+----- Notion: namespace-----
+1) Create a namespace
+NS::
+
+
+----- Notion: streams-----
+1) Print on std out (+ newline)
+include <iostream>
+std::cout << "hello" << "world" << std:endl;
+std:: 
+
+// How can I store a string easily?
+
+
+----- Notion: class -----
+1) Define a class in .hpp file
+class Test
+{
+	public:
+		test(void);
+		~test(void);
+}
+2) Define constructor and destructor
+~Test(void){}
+
+
+----- Notion: class members (attributs & functions)-----
+attribut = variable in class;
+1) Define a class with functions & attributs members
+class Test
+{
+	public:
+		test(void);
+		~test(void);
+		int	i = 42;
+		void bar(void);
+}
+2) Define the function
+3) Use the function
+int	main(void)
+{
+	Test hey;
+
+	hey.i;
+	hey.bar();
+	return();
+}
+
+----- Notion: this-----
+definition: this is a pointer that any c++ class funtion contains
+it's the representation of the current instance (the class)
+1) Use "this" in the constructor
+Test(void)
+{
+	this->foo = 42; // change the value of the instance in the class
+}
+
+----- Notion: initialization list------
+Only for constructor
+1) initialization like: Test::Test(char c, int d) : a(c), b(d){}
+Test::Test(char c, int d) : a(c), b(d)
+{
+	std::cout << "c and d are equal to: " << this->a << " " << this->b << std::endl;
+
+}
+
+----- Notion: const -----
+Create const function members to have a strong code
+1) declare const function in class (in hpp)
+void	test(void) const;
+1) declare const function in class (in cpp file)
+void	test(void) const{}
+
+----- Notion: visibility -----
+Public and private class parts
+1) Public: can use public attributs and functions members anywhere in my code
+2) Private: can only use private attributs and functions members in my class functions
+- use _ before name of private members like : _attribut1
+
+----- Notion: Difference class and struct-----
+Class: members -> private by default
+Structures: elements -> public by default
+Conclusion: use class by default
+
+----- Notion: Accessor -----
+
+// allow limited access on some private stuff (attributs)
+1) allow to read
+int	Test::getvar(void)
+{
+	return this->_privatevar;
+}
+2) allow to modify (if...)
+void	Test::setvar(int c)
+{
+	if (c > 0)
+		this->_privatevar = 8;
+}
+
+----- Notion: Non member attributes and non member functions -----
+No this pointer in static function (non member function)
+Add static before the function in the class
+Same before attribut
+
+static Test::test(void){}
+
+----- Notion: Pointer on member -----
+pointer on attribut member of my class
+int	Test::*attribut_member = NULL;
+1) Define the value of the attribut member
+instance.*p = 21;
+
+pointer on function member of my class
+
+
+----- Notion: LIB-----
+<string>
+<iostream>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
