@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 23:19:12 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/28 23:58:27 by mbriand          ###   ########.fr       */
+/*   Created: 2024/08/28 23:19:15 by mbriand           #+#    #+#             */
+/*   Updated: 2024/08/28 23:34:50 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+# include <string>
 
-class	PhoneBook
+class	Contact
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		Contact list[8];
-		// void add(void);
-		// void search(void);
-		int test = 2;
+		Contact(void);
+		~Contact(void);
+		int			index;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
 };
 
 #endif

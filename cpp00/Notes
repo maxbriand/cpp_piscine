@@ -112,16 +112,16 @@ instance.*p = 21;
 
 pointer on function member of my class
 
-
 ----- Notion: LIB-----
-<string>
+<string>: 
+	std::string name_string: to create a string
+	std::string name_string[9]: to create an array of string
 <iostream>
 
-
-
-
-
-
+----- Notion: comparison ----
+In c++ I can comparate any type of element like string
+if (s1 == s2)
+....
 
 
 
