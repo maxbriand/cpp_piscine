@@ -5,7 +5,7 @@ CPP = c++
 SRC =	PhoneBook.cpp \
 		Contact.cpp \
 		main.cpp
-OBJ = $(patsubst %.c, %.o, $(SRC))
+OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
 all: $(NAME)
 

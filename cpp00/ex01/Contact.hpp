@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:19:15 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/28 23:34:50 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/29 16:54:17 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Contact
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;
+		std::string darkest_secret;
 };
 
 #endif
