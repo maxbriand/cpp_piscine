@@ -6,31 +6,21 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 14:53:10 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/28 16:08:47 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/29 23:45:16 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "test.hpp"
 
-Test::Test(char c, int d) : a(c), b(d)
+int main(void)
 {
-	std::cout << "c and d are equal to: " << this->a << " " << this->b << std::endl;
+	std::string hello;
 
-}
-
-Test::~Test(void)
-{
-	std::cout << "end" << std::endl;
-}
-
-void Test::bar(void)
-{
-	std::cout << "hey men!" << std::endl;
-}
-
-int	main(void)
-{
-	Test:Test('l', 22);
-	return(0);
+	hello = "mamamammam";
+	hello = "okokokokokokokokoko";
+	std::cout << "'" << hello << "'" << std::endl;
+	if (hello == "")
+		std::cout << "hello world!" << std::endl;
+	return (0);
 }

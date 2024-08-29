@@ -116,6 +116,11 @@ pointer on function member of my class
 <string>: 
 	std::string name_string: to create a string
 	std::string name_string[9]: to create an array of string
+	the string is set as empty string / so there are a pointer on it
+	Methods:
+		- check if string is empty: string.empty()
+		- return len of the string: string.lenght()
+	can realloc a string just like that
 <iostream>
 
 ----- Notion: comparison ----

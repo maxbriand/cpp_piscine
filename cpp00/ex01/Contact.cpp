@@ -6,13 +6,16 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:30 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/29 15:41:23 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/29 23:50:09 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(void){}
+Contact::Contact(void)
+{
+	this->index = 0;
+}
 
 Contact::~Contact(void){}
 
