@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:19:12 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/30 00:26:39 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/30 16:04:17 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		Contact list[8];
-		void add(void);
-		void search(void);
-		int next_index;
-		// void step_by_step(void); // cut the progran
+		void 	add(void);
+		void 	search(void);
+		void	show_column_type(void);
+		int 	next_index;
 };
 
 #endif

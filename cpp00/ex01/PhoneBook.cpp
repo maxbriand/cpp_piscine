@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:38 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/30 00:30:32 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/30 16:08:00 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,13 @@ PhoneBook::~PhoneBook(void){}
 
 void    PhoneBook::add(void)
 {
+    std::cout << "First name: ";
     std::cin >> this->list[this->next_index].first_name;
+    std::cout << "Last name: ";
     std::cin >> this->list[this->next_index].last_name;
+    std::cout << "Nickname: ";
     std::cin >> this->list[this->next_index].nickname;
+    std::cout << "Darkest secret: ";
     std::cin >> this->list[this->next_index].darkest_secret;
     if (this->next_index == 7)
         this->next_index = 0;
@@ -46,11 +50,18 @@ void    PhoneBook::add(void)
 
 // cut the program
 
+void    PhoneBook::show_column_type(void)
+{
+    std::cout << std::setw(10) << "Index" << "|" << "First name" << "|" <<
+        std::setw(10) << "Last name " << "|" << "Nickname" << std::endl;
+}
+
 void    PhoneBook::search(void)
 {
     int i;
     std::string elem;
 
+    this->show_column_type();
     i = 0;
     while (i < 8)
     {

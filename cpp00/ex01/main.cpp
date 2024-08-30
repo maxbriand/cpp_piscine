@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:23 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/30 00:05:33 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/30 15:58:49 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int main(void)
 
     while (1)
     {
+        std::cout << "Enter command: ";
         std::cin >> input;
-        if (input == "EXIT")
+        if (std::cin.eof())
+            break ;
+        else if (input == "EXIT")
             break ;
         else if (input == "ADD")
             pb.add();
