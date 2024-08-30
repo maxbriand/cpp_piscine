@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:23 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/30 15:58:49 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/30 18:19:10 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@ int main(void)
 
     while (1)
     {
-        std::cout << "Enter command: ";
-        std::cin >> input;
         if (std::cin.eof())
             break ;
-        else if (input == "EXIT")
+        std::cout << "Enter command: ";
+        std::getline(std::cin, input);
+        // if (std::cin.eof())
+        //     break ;
+        if (input == "EXIT")
             break ;
         else if (input == "ADD")
             pb.add();
         else if (input == "SEARCH")
             pb.search();
-        else
+        else if (!std::cin.eof())
             std::cout << "unknows command" << std::endl;
     }
     return (0);
