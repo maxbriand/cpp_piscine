@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:38 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/30 18:19:36 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/08/31 14:58:05 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ PhoneBook::PhoneBook(void)
 
 PhoneBook::~PhoneBook(void){}
 
-// protect EOF
 void    PhoneBook::add(void)
 {
 	std::string input;
@@ -36,16 +35,28 @@ void    PhoneBook::add(void)
 	std::cout << "First name: ";
 	std::getline(std::cin, input);
 	if (std::cin.eof())
-		break ;
+		return ;
 	this->list[this->next_index].set_first_name(input);
 	std::cout << "Last name: ";
-	std::cin >> this->list[this->next_index].la;
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
+	this->list[this->next_index].set_last_name(input);
 	std::cout << "Nickname: ";
-	std::cin >> this->list[this->next_index].nickname;
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
+	this->list[this->next_index].set_nickname(input);
 	std::cout << "Phone number: ";
-	std::cin >> this->list[this->next_index].phone_number;
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
+	this->list[this->next_index].set_phone_number(input);
 	std::cout << "Darkest secret: ";
-	std::cin >> this->list[this->next_index].darkest_secret;
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
+	this->list[this->next_index].set_darkest_secret(input);
 	if (this->next_index == 7)
 		this->next_index = 0;
 	else
@@ -56,7 +67,7 @@ void    PhoneBook::add(void)
 void    PhoneBook::show_column_type(void)
 {
 	std::cout << std::setw(10) << "Index" << "|" << "First name" << "|" <<
-		std::setw(10) << "Last name " << "|" << "Nickname" << std::endl;
+		std::setw(10) << "Last name" << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
 }
 
 void    PhoneBook::display_list(void)
@@ -68,31 +79,34 @@ void    PhoneBook::display_list(void)
 	while (i < 8)
 	{
 		std::cout << std::setw(10) << this->list[i].index << "|";
-		elem = this->list[i].first_name;
+		elem = this->list[i].get_first_name();
 		if (elem.size() <= 10)
 			std::cout << std::setw(10) << elem << "|";
 		else
 			std::cout << elem.substr(0, 9) << "." << "|";
-		elem = this->list[i].last_name;
+		elem = this->list[i].get_last_name();
 		if (elem.size() <= 10)
 			std::cout << std::setw(10) << elem << "|";
 		else
 			std::cout << elem.substr(0, 9) << "." << "|";
-		elem = this->list[i].nickname;
+		elem = this->list[i].get_nickname();
 		if (elem.size() <= 10)
-			std::cout << std::setw(10) << elem << std::endl;
+			std::cout << std::setw(10) << elem << "|" << std::endl ;
 		else
-			std::cout << elem.substr(0, 9) << "." << std::endl;
+			std::cout << elem.substr(0, 9) << "." << "|" << std::endl;
 		i++;
 	}
 }
 
-// void	PhoneBook::display_contact(int i)
-// {
-// 	i--;
+void	PhoneBook::display_contact(int i)
+{
+	i--;
 
-// 	this->list[i].first_name;
-// }
+	std::cout << i + 1 << std::endl;
+	std::cout << "First name: " << this->list[i].get_first_name() << std::endl;
+	std::cout << "Last name: " << this->list[i].get_last_name() << std::endl;
+	std::cout << "Nickname: " << this->list[i].get_nickname() << std::endl;
+}
 
 void    PhoneBook::search(void)
 {
@@ -102,8 +116,8 @@ void    PhoneBook::search(void)
 	this->show_column_type();
 	this->display_list();
 	
+	std::cout << "Contact index: ";
 	std::getline(std::cin, index);
-	// convert using atoi and don't forget to protect -1;
 	i = std::atoi(index.c_str());
 	if (i < 1 || i > 8)
 	{
