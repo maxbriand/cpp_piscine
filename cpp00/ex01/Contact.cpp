@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:37:30 by mbriand           #+#    #+#             */
-/*   Updated: 2024/08/31 14:42:11 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/01 18:50:01 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,6 @@ std::string Contact::get_nickname(void)
 {
 	return (this->_nickname);	
 }
-
-// std::string Contact::get_phone_number(void)
-// {
-// 	return (this->_phone_number);
-// }
-
-// std::string Contact::get_darkest_secret(void)
-// {
-// 	return (this->_darkest_secret);
-// }
 
 void Contact::set_first_name(std::string first_name)
 {
