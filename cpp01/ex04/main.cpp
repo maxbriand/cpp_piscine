@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:41:51 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/02 16:20:58 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:00:47 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,23 @@ int	errmsg(std::string msg)
 	return (1);
 }
 
-std::string	replace(std::string content)
+// TRY PROGRAM WITH EMPTY STR1 AND STR2
+std::string	replace(std::string content, std::string str1, std::string str2)
 {
-	int	i = 0;
-	
-	while ()
+	size_t	strpos;
+	size_t	len;
+
+	len = str1.length();
+	while (1)
 	{
-		content++;
-		i++;
+		strpos = content.find(str1);
+		if (strpos == std::string::npos)
+			break ;
+		content.erase(strpos, len);
+		// add new string
+		std::cout << content << std::endl;
 	}
+	(void) str2;	
 	return (content);
 }
 
@@ -54,12 +62,12 @@ int	main(int ac, char **av)
 	if (!file)
 		return (errmsg("error occurs during input file opening"));
 	buffer << file.rdbuf();
-	content = replace(buffer.str());
+	content = replace(buffer.str(), str1, str2);
 	// Copy the content in the other file
 	std::ofstream replace_file(replace_filename.c_str());
 	if (!replace_file)
 		return (errmsg("error occurs during replace file opening"));
-	replace_file << content << std::endl;
+	replace_file << content;
 	// Do I need to close files?
 	return (0);
 }
