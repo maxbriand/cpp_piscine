@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.hpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 15:51:58 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/01 15:33:24 by mbriand          ###   ########.fr       */
+/*   Created: 2024/09/03 16:22:03 by mbriand           #+#    #+#             */
+/*   Updated: 2024/09/03 17:36:58 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_HPP
-# define TEST_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-#include <iostream>
-#include <string>
-#include <fstream>
+# include <iostream>
+# include <string>
 
-class	Test
+class	Harl
 {
 	public:
-		Test(void);
-		~Test(void);
-		int get_i(void);
+				Harl(void);
+				~Harl(void);
+		void	complain(std::string level);
 	private:
-		int	_i;
+		void	debug(void) const;
+		void	info(void) const;
+		void	warning(void) const;
+		void	error(void) const;
+		void 	(Harl::*ptfunct[4])(void) const;
 };
 
 #endif
