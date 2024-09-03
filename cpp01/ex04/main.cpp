@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 14:41:51 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/02 17:00:47 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/03 16:02:56 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,24 @@ int	errmsg(std::string msg)
 	return (1);
 }
 
-// TRY PROGRAM WITH EMPTY STR1 AND STR2
 std::string	replace(std::string content, std::string str1, std::string str2)
 {
-	size_t	strpos;
-	size_t	len;
+	size_t	pos;
+	size_t	lens1;
+	size_t	lens2;
 
-	len = str1.length();
+	lens1 = str1.length();
+	lens2 = str2.length();
+	pos = 0;
 	while (1)
 	{
-		strpos = content.find(str1);
-		if (strpos == std::string::npos)
+		if (content.substr(pos).find(str1) == std::string::npos)
 			break ;
-		content.erase(strpos, len);
-		// add new string
-		std::cout << content << std::endl;
+		pos += content.substr(pos).find(str1);
+		content.erase(pos, lens1);
+		content.insert(pos, str2);
+		pos += lens2;
 	}
-	(void) str2;	
 	return (content);
 }
 
@@ -57,17 +58,20 @@ int	main(int ac, char **av)
 	replace_filename = filename + ".replace";
 	str1 = av[2];
 	str2 = av[3];
+	if (str1.empty())
+		return (errmsg("The string to search cannot be an empty string"));
 	// Open input file, get its value and replace it
 	std::ifstream file(filename.c_str());
 	if (!file)
 		return (errmsg("error occurs during input file opening"));
 	buffer << file.rdbuf();
+	file.close();
 	content = replace(buffer.str(), str1, str2);
 	// Copy the content in the other file
 	std::ofstream replace_file(replace_filename.c_str());
 	if (!replace_file)
-		return (errmsg("error occurs during replace file opening"));
+		return (errmsg("error occurs during replace_file opening"));
 	replace_file << content;
-	// Do I need to close files?
+	replace_file.close();
 	return (0);
 }
