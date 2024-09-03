@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 16:17:06 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/03 19:49:34 by mbriand          ###   ########.fr       */
+/*   Created: 2024/09/03 19:33:23 by mbriand           #+#    #+#             */
+/*   Updated: 2024/09/03 19:59:14 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,18 @@ void	Harl::complain(std::string level)
 	{
 		if (level == levels[i])
 		{
-			(this->*ptfunct[i])();
-			break;
+			switch (i)
+			{
+				case 0:
+					(this->*ptfunct[0])();
+				case 1:
+					(this->*ptfunct[1])();
+				case 2:
+					(this->*ptfunct[2])();
+				case 3:
+					(this->*ptfunct[3])();
+				break;
+			}
 		}
 		i++;
 	}
