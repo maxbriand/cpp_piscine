@@ -1,9 +1,9 @@
-NAME = Harl
+NAME = My_First_Class_in_Orthodox_Canonical_Form
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 
-SRC =	main.cpp \
-		Harl.cpp
+SRC =	Fixed.cpp \
+		main.cpp
 OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
 all: $(NAME)
