@@ -6,11 +6,15 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:32:46 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/11 15:33:54 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/12 22:42:30 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
+const std::string& AMateria::getType(void) const
+{
+    return (_type);
+}
 
 

@@ -3,13 +3,13 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 
 SRC =	main.cpp \
-		Character/ICharacter.cpp \
-		Character/Character.cpp \
 		Materia/AMateria.cpp \
 		Materia/Cure.cpp \
-		Materia/Ice.cpp \
-		MateriaSource/IMateriaSource.cpp \
-		MateriaSource/MateriaSource.cpp
+		Materia/Ice.cpp
+# Character/Character.cpp \
+# Character/ICharacter.cpp \
+# MateriaSource/IMateriaSource.cpp \
+# MateriaSource/MateriaSource.cpp
 OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
 all: $(NAME)
@@ -18,7 +18,8 @@ $(NAME): $(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CPP) $(FLAGS) -c $< -o $@ -IMateriaSource -ICharacter -IMateria
+	$(CPP) $(FLAGS) -c $< -o $@ -IMateria
+# -IMateriaSource -ICharacter 
 
 clean:
 	@rm -f $(OBJ)
