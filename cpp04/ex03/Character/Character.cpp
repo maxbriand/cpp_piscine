@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:08:14 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 21:20:44 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 23:34:05 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Character::Character(void) : _name("default_name")
 		_inventory[i] = NULL;
 		i++;
 	}
+	_ground = NULL;
 }
 
 Character::Character(const Character& src)
@@ -40,6 +41,8 @@ Character::~Character(void)
 			unequip(i);
 		i++;
 	}
+	if (_ground)
+		delete _ground;
 }
 
 Character&	Character::operator=(const Character& src)
@@ -55,6 +58,10 @@ Character&	Character::operator=(const Character& src)
 			_inventory[i] = src._inventory[i];
 		i++;
 	}
+	if (src._ground)
+		_ground = src._ground->clone();
+	else
+		_ground = NULL;
 	_name = src._name;
 	return (*this);
 }
@@ -101,15 +108,24 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
+	int	i;
+	
+	if (idx < 0 || idx >= 4)
+		return ;
 	if (_inventory[idx])
 	{
-		delete _inventory[idx];
+		i = 0;
+		if (_ground)
+			delete _ground;
+		_ground = _inventory[idx];
 		_inventory[idx] = NULL;
 	}
 }
 
 void	Character::use(int idx, ICharacter& target)
 {	
+	if (idx < 0 || idx >= 4)
+		return ;
 	if (_inventory[idx])
 		_inventory[idx]->use(target);
 	else

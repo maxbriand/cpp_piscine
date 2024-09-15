@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:08:35 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 13:35:14 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 23:24:04 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Character : public ICharacter
 	private:
 		AMateria*			_inventory[4];
 		std::string			_name;
+		AMateria*			_ground;
 	public:
 							Character(void);
 							Character(const Character& src);
