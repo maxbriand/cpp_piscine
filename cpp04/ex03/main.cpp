@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:40:52 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 21:19:19 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 21:55:06 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ int main (void)
 	p3->equip(m2);
 	p3->equip(m2);
 	p3->unequip(3);
-	p3->unequip(1);
+	// p3->unequip(1);
 
 
 	std::cout << std::endl << std::endl << "Test use function on equipment: "<< std::endl << std::endl;

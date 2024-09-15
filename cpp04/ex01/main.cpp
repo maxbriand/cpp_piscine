@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:18:45 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/11 15:09:18 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 21:49:29 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,9 @@ int main(void)
 	Dog ann;
 	Dog ann2;
 
-	ann = ann;
 	ann = ann2;
 
 	std::cout << std::endl;
 
-	Brain test;
-	Brain test2;
 
-	test = test;
 }

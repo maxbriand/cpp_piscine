@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:07:25 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 21:16:43 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 21:53:00 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 	AMateria*	new_materia;
 
 	i = 0;
+	new_materia = NULL;
 	while (i < 4)
 	{
 		if (_learn_list[i] && _learn_list[i]->getType() == type)
