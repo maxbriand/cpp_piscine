@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:35:04 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/13 13:19:32 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/14 19:26:53 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

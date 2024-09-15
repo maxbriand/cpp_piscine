@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:32:46 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/13 13:48:09 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 20:16:08 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 AMateria::AMateria(void) : _type("default type"){}
 
-AMateria::AMateria(const std::string& type) : _type(type){}
 
 AMateria::AMateria(const AMateria& src)
 {
@@ -24,18 +23,19 @@ AMateria::AMateria(const AMateria& src)
 AMateria&   AMateria::operator=(const AMateria& src)
 {
     _type = src._type;
-    return (*this);
+	return (*this);
 }
 
-AMateria::~AMateria(){};
+AMateria::~AMateria(){}
+
+AMateria::AMateria(const std::string& type) : _type(type){}
 
 const std::string& AMateria::getType(void) const
 {
-    return (_type);
+	return (_type);
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
-    std::cout << "* default message*" << std::endl;
+    std::cout << "* default message at *" << target.getName() << std::endl;
 }
-

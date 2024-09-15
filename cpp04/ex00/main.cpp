@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:18:45 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/09 15:52:29 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 20:56:34 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int main()
 	k->makeSound(); //will output the cat sound!
 	tema->makeSound();
 
+	delete meta; delete j; delete i; delete k; delete tema;
 	return (0);
 }

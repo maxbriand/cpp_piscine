@@ -6,41 +6,112 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:08:14 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/12 23:22:39 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/15 21:20:44 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void) : _name("default_name"){}
-
-Character::Character(std::string name) : _name(name){}
-
-Character::~Character(void){}
+Character::Character(void) : _name("default_name")
+{
+	int	i;
+	
+	i = 0;
+	while (i < 4)
+	{
+		_inventory[i] = NULL;
+		i++;
+	}
+}
 
 Character::Character(const Character& src)
 {
-    *this = src;
+	*this = src;
 }
 
-Character& Character::operator=(const Character& src)
+Character::~Character(void)
 {
-    this->_name = src._name;
-    this->
+	int	i;
+	
+	i = 0;
+	while (i < 4)
+	{
+		if (_inventory[i])
+			unequip(i);
+		i++;
+	}
 }
 
-const std::string& 	Character::getName(void) const
+Character&	Character::operator=(const Character& src)
 {
-    return (_name);
+	int	i;
+
+	if (this == &src)
+		return (*this);
+	i = 0;
+	while (i < 4)
+	{
+		if (src._inventory[i])
+			_inventory[i] = src._inventory[i];
+		i++;
+	}
+	_name = src._name;
+	return (*this);
 }
 
-void    Character::equip(AMateria* m)
-{}
-
-void    Character::unequip(int idx)
-{}
-
-void    Character::use(int idx, ICharacter& target)
+Character::Character(std::string name) : _name(name)
 {
-    
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		_inventory[i] = NULL;
+		i++;
+	}
+}
+
+const std::string&	Character::getName(void) const
+{
+	return (_name);
+}
+
+void	Character::equip(AMateria* m)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (_inventory[i] && _inventory[i] == m)
+			return ;
+		i++;
+	}
+	i = 0;
+	while (i < 4)
+	{
+		if (!_inventory[i])
+		{
+			_inventory[i] = m;
+			break ;
+		}
+		i++;
+	}
+}
+
+void	Character::unequip(int idx)
+{
+	if (_inventory[idx])
+	{
+		delete _inventory[idx];
+		_inventory[idx] = NULL;
+	}
+}
+
+void	Character::use(int idx, ICharacter& target)
+{	
+	if (_inventory[idx])
+		_inventory[idx]->use(target);
+	else
+		std::cout << "empty inventory at this index" << std::endl;
 }

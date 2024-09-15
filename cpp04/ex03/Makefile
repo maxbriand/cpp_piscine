@@ -5,11 +5,9 @@ CPP = c++
 SRC =	main.cpp \
 		Materia/AMateria.cpp \
 		Materia/Cure.cpp \
-		Materia/Ice.cpp
-# Character/Character.cpp \
-# Character/ICharacter.cpp \
-# MateriaSource/IMateriaSource.cpp \
-# MateriaSource/MateriaSource.cpp
+		Materia/Ice.cpp \
+		Character/Character.cpp \
+		MateriaSource/MateriaSource.cpp 
 OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
 all: $(NAME)
@@ -18,8 +16,7 @@ $(NAME): $(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CPP) $(FLAGS) -c $< -o $@ -IMateria
-# -IMateriaSource -ICharacter 
+	$(CPP) $(FLAGS) -c $< -o $@ -IMateria -ICharacter -IMateriaSource  
 
 clean:
 	@rm -f $(OBJ)

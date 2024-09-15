@@ -6,12 +6,12 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:37:26 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/11 16:06:53 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/14 18:12:10 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIA_HPP
-# define IMATERIA_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 # include "AMateria.hpp"
 # include <string>
