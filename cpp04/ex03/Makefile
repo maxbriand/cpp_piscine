@@ -1,5 +1,5 @@
 NAME = Interface_and_recap
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 CPP = c++
 
 SRC =	main.cpp \

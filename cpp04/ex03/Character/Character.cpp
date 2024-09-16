@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:08:14 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 23:34:05 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:23:26 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Character&	Character::operator=(const Character& src)
 	return (*this);
 }
 
-Character::Character(std::string name) : _name(name)
+Character::Character(const std::string& name) : _name(name)
 {
 	int	i;
 
@@ -76,6 +76,7 @@ Character::Character(std::string name) : _name(name)
 		_inventory[i] = NULL;
 		i++;
 	}
+	_ground = NULL;
 }
 
 const std::string&	Character::getName(void) const
@@ -87,6 +88,8 @@ void	Character::equip(AMateria* m)
 {
 	int	i;
 
+	if (!m)
+		return ;
 	i = 0;
 	while (i < 4)
 	{
@@ -108,13 +111,10 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
-	int	i;
-	
 	if (idx < 0 || idx >= 4)
 		return ;
 	if (_inventory[idx])
 	{
-		i = 0;
 		if (_ground)
 			delete _ground;
 		_ground = _inventory[idx];

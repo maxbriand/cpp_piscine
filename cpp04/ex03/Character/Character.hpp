@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:08:35 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 23:24:04 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:18:06 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character : public ICharacter
 							~Character(void);
 		Character&			operator=(const Character& src);	
 	public:
-							Character(std::string name);
+							Character(const std::string& name);
 		const std::string& 	getName(void) const;
 		void 				equip(AMateria* m);
 		void 				unequip(int idx);

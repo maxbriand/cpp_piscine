@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:07:25 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 21:53:00 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:25:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void	MateriaSource::learnMateria(AMateria* src)
 {
 	int	i;
 
+	if (!src)
+		return ;
 	i = 0;
 	while (i < 4)
 	{

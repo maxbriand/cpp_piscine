@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:40:52 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/15 21:55:06 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:36:10 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,6 @@ int main (void)
 	p3->equip(m2);
 	p3->equip(m2);
 	p3->unequip(3);
-	// p3->unequip(1);
 
 
 	std::cout << std::endl << std::endl << "Test use function on equipment: "<< std::endl << std::endl;
@@ -157,10 +156,32 @@ int main (void)
 	delete me;
 	delete src;
 
-	std::cout << std::endl << std::endl << "Valgrind test"<< std::endl << std::endl;
+	std::cout << std::endl << std::endl << "Unexcepted usecase"<< std::endl << std::endl;
 	IMateriaSource* ms1 = new MateriaSource();
 	AMateria* c1000 = new Cure();
 	ms1->learnMateria(c1000);
 	delete ms1;
+
+	ICharacter* p18 = new Character("Ethan");	
+	p18->equip(new Cure());
+	p18->equip(NULL);
+	p18->unequip(0);
+	p18->unequip(10);
+	p18->equip(new Cure());
+	p18->use(0, *p18);
+	p18->use(1, *p18);
+	p18->use(-1, *p18);
+	IMateriaSource *jekd = new MateriaSource();
+	jekd->learnMateria(NULL);
+	jekd->learnMateria(new Cure());
+	jekd->createMateria("fje");
+	p18->equip(jekd->createMateria("cure"));
+	delete jekd;
+
+	Cure *newoneone = new Cure();
+	Cure *nsk = new Cure(*newoneone);
+	nsk->use(*p18);
+	delete newoneone; delete nsk;
+	delete p18;
 	return (0);
 }
