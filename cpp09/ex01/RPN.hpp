@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 22:06:18 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/05 15:27:54 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/05 16:04:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class RPN
 
    private:
 		std::stack<float> 	_digits;
-		float				parsing(std::string calcul);
+		void				parsing(std::string& calcul, size_t& fpos, size_t& lpos);
+		void				calculator(std::string& calcul, size_t fpos);
 
    public:
 		RPN();
