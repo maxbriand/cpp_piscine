@@ -5,36 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:02:31 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/04 22:01:37 by mbriand          ###   ########.fr       */
+/*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
+/*   Updated: 2024/10/05 16:57:40 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 
+// use deque AND Vector
 int	main(int ac, char **av)
 {
-	if (ac > 2 || ac < 2)
-		{std::cerr << "Error: Incorrect argument number!" << std::endl; exit (1);}
+	if (ac < 3){
+		std::cerr << "2 minimum numbers are required!" << std::endl; return (1);}
+
 	try
 	{
-		// Test: Default construction
-		BitcoinExchange bExchanger;
-		BitcoinExchange bExchanger3;
+		PmergeMe	sorter;
+		sorter.mer
+	// Parsing: only positive numbers in the input // max 10000?
+	// put a limit on 10000 integers
+	//  
 
-		// Test: Copy construction
-		BitcoinExchange bExchanger2(bExchanger);
-
-		// Test: operator=
-		bExchanger3 = bExchanger;
-
-		// Test Print Portfolio evolution
-		bExchanger3.print_bitcoin_portfolio_evolution(av[1]);
+	// Output:
+	// Before: 141 79 526 321 [...]
+	// After: 79 141 321 526 [...]
+	// Time to process a range of 3000 elements with std::[..] : 62.14389 us
+	// Time to process a range of 3000 elements with std::[..] : 69.27212 us
 
 	}
 	catch (std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
-	}		
+		std::cerr << e.what() << std::endl;
+	}
+
+	(void) av; // to delete
 	return (0);
 }

@@ -1,10 +1,9 @@
-NAME = btc
+NAME = PmergeMe
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 CPP = c++
 
 SRC =	main.cpp \
-		BitcoinExchange.cpp \
-		BitcoinExchangeExceptions.cpp
+		PmergeMe.cpp
 OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
 all: $(NAME)

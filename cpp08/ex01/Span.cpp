@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:22:14 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/26 23:17:02 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/27 14:31:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 Span::Span(unsigned int N) : _N(N){}
 
-template    <typename Iterator>
-void	Span::addNumbers(Iterator begin, Iterator end)
+void	Span::addNumbers(int *begin, int* end)
 {
 	unsigned int	size;
 
 	size = std::distance(begin, end);
 	if (size == 0)
 		return ;
-	if (_int_vector.size() + size >= _N)
+	if (_int_vector.size() + size > _N)
 		throw std::exception();
 	_int_vector.insert(_int_vector.end(), begin, end);
 }
@@ -32,7 +31,6 @@ void    Span::addNumber(int i)
 	if (_int_vector.size() == _N)
 		throw std::exception();
 	_int_vector.push_back(i);
-	std::sort(_int_vector.begin(), _int_vector.end());
 }
 
 int	Span::shortestSpan()
@@ -42,6 +40,7 @@ int	Span::shortestSpan()
 
 	if (_int_vector.size() < 2)
 		throw std::exception();
+	std::sort(_int_vector.begin(), _int_vector.end());
 	i = 2;
 	shortest_span = _int_vector[1] - _int_vector[0];
 	while (i < _int_vector.size())
@@ -57,6 +56,7 @@ int	Span::longestSpan()
 {
 	if (_int_vector.size() < 2)
 		throw std::exception();
+	std::sort(_int_vector.begin(), _int_vector.end());
 	return (_int_vector[_int_vector.size() - 1] - _int_vector[0]);
 }
 

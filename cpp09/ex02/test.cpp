@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.hpp                                        :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:15:10 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/01 14:25:11 by mbriand          ###   ########.fr       */
+/*   Created: 2024/10/05 17:00:45 by mbriand           #+#    #+#             */
+/*   Updated: 2024/10/05 17:04:54 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_HPP
-# define PARSING_HPP
+#include <cstring>
+#include <iostream>
 
-# include <cstdlib>
-# include <fstream>
-# include <iostream>
-# include <string>
-# include <cstring>
-# include <cstddef>
-# include <map>
+int	main(void)
+{
+	std::string hehe = "-848848848484333   33333333333333333333333338488490";
 
-void	parsing(int ac, char **av, std::map<t_date, int>& input);
-
-#endif
+	std::cout << atol(hehe.c_str()) << std::endl;
+	return (0);
+}

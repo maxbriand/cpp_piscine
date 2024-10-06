@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:22:09 by mbriand           #+#    #+#             */
-/*   Updated: 2024/09/26 23:15:19 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/09/27 14:01:15 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ class Span
         std::vector <int>   _int_vector;
     public:
         Span(unsigned int N);
-        template    <typename Iterator>
-        void        addNumbers(Iterator begin, Iterator end);
+        void        addNumbers(int* begin, int* end);
         void        addNumber(int i);
         int         shortestSpan();
         int         longestSpan();
@@ -38,7 +37,5 @@ class Span
         Span(const Span& src);
         Span& operator=(const Span& src);
 };
-
-#include "Span.cpp"
 
 #endif
