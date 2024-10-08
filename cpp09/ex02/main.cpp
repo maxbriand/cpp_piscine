@@ -6,22 +6,23 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/05 16:57:40 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/08 17:15:43 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
 // use deque AND Vector
+// check recursivity limit
 int	main(int ac, char **av)
 {
-	if (ac < 3){
-		std::cerr << "2 minimum numbers are required!" << std::endl; return (1);}
-
+	if (ac < 2){
+		std::cerr << "2 minimum args are required!" << std::endl; return (1);}
+	av++;
 	try
 	{
 		PmergeMe	sorter;
-		sorter.mer
+		sorter.merge_insert_sort(av);
 	// Parsing: only positive numbers in the input // max 10000?
 	// put a limit on 10000 integers
 	//  
