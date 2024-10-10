@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/09 18:59:21 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/10 15:24:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int ac, char **av)
 	try
 	{
 		PmergeMe sorter;
-
 
 		sorter.store_chain_in_container(vector_unsorted_chain, av);
 		
