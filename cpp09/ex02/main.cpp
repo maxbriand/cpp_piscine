@@ -6,23 +6,41 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/08 17:15:43 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/09 18:59:21 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-// use deque AND Vector
-// check recursivity limit
+// check recursivity limit AND add the limit if it's under than 1 million
+// check constructors
 int	main(int ac, char **av)
 {
+	std::vector<iint>	vector_unsorted_chain;
+	std::deque<iint>	deque_unsorted_chain;
+
 	if (ac < 2){
 		std::cerr << "2 minimum args are required!" << std::endl; return (1);}
 	av++;
 	try
 	{
-		PmergeMe	sorter;
-		sorter.merge_insert_sort(av);
+		PmergeMe sorter;
+
+
+		sorter.store_chain_in_container(vector_unsorted_chain, av);
+		
+		// Step 1.5: Create the positive int deque sequence
+		// std::vector<iint> vector_unsorted_sequence = sorter
+
+
+		// Step 2: Sort the vector sequence
+		// sorter.merge_insert_sort(av);
+
+		// Step 2.5: Sort the deque sequence
+	
+	
+	
+	
 	// Parsing: only positive numbers in the input // max 10000?
 	// put a limit on 10000 integers
 	//  
@@ -38,7 +56,5 @@ int	main(int ac, char **av)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	(void) av; // to delete
 	return (0);
 }

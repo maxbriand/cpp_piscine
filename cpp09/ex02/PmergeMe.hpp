@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:23:57 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/08 17:07:29 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/09 18:22:45 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ typedef	std::pair<int, std::vector<int> >iint;
 class PmergeMe 
 {
    public:
-		void	merge_insert_sort(char ** input);
+		// Container	ford_johnson_sorting_algorithm(Container& unsorted_chain, int level);
 		class WrongInputException : public std::exception {const char* what() const throw();};
+		template <typename Container>
+		void	store_chain_in_container(Container& unsorted_chain, char** input);
 
    private:
-		void	store_int_in_deque(std::deque <iint>& unsorted_chain, char** input);
-		void	duplicate_numbers_check(std::deque<iint>& initial_sequence);
-		std::deque<iint>	ford_johnson_sorting_algorithm(std::deque<iint>& unsorted_chain, int level);
+		template <typename Container>
+		void		duplicate_numbers_check(Container& unsorted_chain);
 
    public:
 	   PmergeMe();
