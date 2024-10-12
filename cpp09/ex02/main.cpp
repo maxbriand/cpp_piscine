@@ -6,15 +6,11 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/12 17:33:51 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/12 18:12:30 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-// check recursivity limit AND add the limit if it's under than 15000
-// check constructors
-// delete colors
 
 void	print_time_comparison(std::clock_t& start1, std::clock_t& end1, std::clock_t& start2, std::clock_t& end2, size_t size)
 {
@@ -48,7 +44,6 @@ void	print_before_sorting(std::deque<iint>& deque_unsorted_chain)
 	std::cout << std::endl;
 }
 
-// should I handle 0
 int main(int ac, char **av)
 {
 	std::vector<iint> 	vector_unsorted_chain;
@@ -76,7 +71,7 @@ int main(int ac, char **av)
 		end2 = std::clock();
 		print_before_sorting(deque_unsorted_chain);
 		print_after_sorting(deque_sorted_chain);
-		print_time_comparison(start1, end1, start2, end2, deque_unsorted_chain.size());
+		print_time_comparison(start1, end1, start2, end2, deque_unsorted_chain.size());	
 	}
 	catch (std::exception &e)
 	{

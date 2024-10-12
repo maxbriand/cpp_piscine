@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:23:57 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/12 17:48:54 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/12 17:53:59 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,8 @@
 # include <cstdlib>
 # include <ctime>
 # include <cmath>
-# include <iterator>   // for std::distance
-# include <algorithm> // for std::find
-
-// can delete that
-#include <unistd.h>
-#include "colors.hpp"
+# include <iterator>
+# include <algorithm>
 
 typedef	std::pair<int, std::vector<int> >iint;
 
@@ -189,42 +185,9 @@ Container	PmergeMe::ford_johnson_sorting_algorithm(Container unsorted_chain, int
 	size_t		jacobsthal_index = 0;
 
 	sort_looser_chain(loosers_chain, sorted_looser_chain, initial_main_chain, level);
-	// int	its_the_print = 0; 	// to delete 
-	// std::cout << std::endl << RED << "New level";
 
 	while (main_chain.size() < unsorted_chain.size())
-	{
-// 		if (its_the_print == 0)
-// {
-// 	std::cout << BLU << std::endl << "New loop: " << CLR << std::endl;
-// 	std::cout << "Unsorted elements: ";
-// 	for (typename Container::iterator it = unsorted_chain.begin(); it != unsorted_chain.end(); ++it)
-// 	{
-// 		std::cout << it->first << " ";
-// 	}
-// 	std::cout << std::endl;
-// 	std::cout << "Initial main chain: ";
-// 	for (typename Container::iterator it = initial_main_chain.begin(); it != initial_main_chain.end(); ++it)
-// 	{
-// 		std::cout << it->first << " ";
-// 	}
-// 	std::cout << std::endl;
-// 	std::cout << "Sorted Looser Chain: ";
-// 	for (typename Container::iterator it = sorted_looser_chain.begin(); it != sorted_looser_chain.end(); ++it)
-// 	{
-// 		std::cout << it->first << " ";
-// 	}
-// 	std::cout << std::endl;
-// 	std::cout << YLW"Main chain" << ": ";
-// 	for (typename Container::iterator it = main_chain.begin(); it != main_chain.end(); ++it)
-// 	{
-// 		std::cout << it->first << " ";
-// 	}
-// 	std::cout << std::endl<<CLR;
-// 	std::cout << "The current position is: " << pos << std::endl;		
-// }
-
-		
+	{		
 		if (pos == 0)
 		{
 			main_chain.insert(main_chain.begin(), sorted_looser_chain[0]);
