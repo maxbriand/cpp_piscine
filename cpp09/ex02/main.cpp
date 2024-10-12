@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:18:37 by mbriand           #+#    #+#             */
-/*   Updated: 2024/10/11 23:51:34 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/10/12 17:33:51 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	print_before_sorting(std::deque<iint>& deque_unsorted_chain)
 	std::cout << std::endl;
 }
 
+// should I handle 0
 int main(int ac, char **av)
 {
 	std::vector<iint> 	vector_unsorted_chain;
@@ -71,7 +72,7 @@ int main(int ac, char **av)
 		deque_sorted_chain = sorter.ford_johnson_sorting_algorithm(deque_unsorted_chain, 0);	
 		end1 = std::clock();
  		start2 = std::clock();
- 		// sorter.ford_johnson_sorting_algorithm(vector_unsorted_chain, 0);
+ 		sorter.ford_johnson_sorting_algorithm(vector_unsorted_chain, 0);
 		end2 = std::clock();
 		print_before_sorting(deque_unsorted_chain);
 		print_after_sorting(deque_sorted_chain);
